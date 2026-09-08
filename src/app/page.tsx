@@ -4,6 +4,20 @@ import TautanPanel from "@/components/Tautan";
 import PitaTautan from "@/components/PitaTautan";
 
 export default function Home() {
+  const badgeKatimker = (
+    <>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.46L12 14.77l-4.94 2.23L8 11.54l-4-3.9 5.6-.78L12 2Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+      </svg>
+      Ketua Tim Kerja: Forensy Galenica, S.P., M.P.
+    </>
+  );
+
   return (
     <>
       <Panggung />
@@ -89,29 +103,24 @@ export default function Home() {
 
         <main className="isi">
           <div>
-            <span className="status status-katimker">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.46L12 14.77l-4.94 2.23L8 11.54l-4-3.9 5.6-.78L12 2Z"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Ketua Tim Kerja: Forensy Galenica, S.P., M.P.
-            </span>
+            <span className="status status-katimker katimker-desktop">{badgeKatimker}</span>
 
             <h1>
-              <span className="baris">
-                <i>Tempat penyuluh,</i>
+              <span className="judul-desktop">
+                <span className="baris">
+                  <i>Tempat penyuluh,</i>
+                </span>
+                <span className="baris">
+                  <i>petani, dan data</i>
+                </span>
+                <span className="baris">
+                  <i className="surya">bertemu di sini.</i>
+                </span>
               </span>
-              <span className="baris">
-                <i>petani, dan data</i>
-              </span>
-              <span className="baris">
-                <i className="surya">bertemu di sini.</i>
-              </span>
+              <span className="judul-mobile">CWS Way Kanan</span>
             </h1>
+
+            <span className="status status-katimker katimker-mobile">{badgeKatimker}</span>
 
             <p className="ringkas">
               Co Working Space Way Kanan adalah kelembagaan penyuluhan tingkat kabupaten: ruang
@@ -126,30 +135,48 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <svg className="ikon-pin" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.8" />
+                </svg>
                 Lokasi CWS
+                <svg className="ikon-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M9 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </a>
             </div>
 
             <div className="angka">
-              <div>
+              <div className="kartu-angka">
                 <strong data-hitung="15">0</strong>
                 <span>Kecamatan terlayani</span>
               </div>
-              <div>
+              <div className="kartu-angka">
                 <strong data-hitung="227">0</strong>
                 <span>Desa Binaan</span>
               </div>
-              <div>
+              <div className="kartu-angka">
                 <strong data-hitung="94" data-akhir="+">
                   0
                 </strong>
                 <span>Penyuluh</span>
               </div>
-              <div>
+              <div className="kartu-angka">
                 <strong data-hitung="2944" data-akhir="+">
                   0
                 </strong>
-                <span>Kelompok tani terdata</span>
+                <span>Kelompok yang terbina</span>
               </div>
             </div>
           </div>
