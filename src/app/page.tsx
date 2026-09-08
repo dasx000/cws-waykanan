@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Panggung from "@/components/Panggung";
 import TautanPanel from "@/components/Tautan";
+import PitaTautan from "@/components/PitaTautan";
 
 export default function Home() {
   return (
@@ -76,48 +78,27 @@ export default function Home() {
         <header className="kepala">
           <a className="merek" href="#">
             <span className="tanda" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22V9M12 9c0-3.5-2-6-5-7 0 3.6 1.8 6.2 5 7Zm0 0c0-3.5 2-6 5-7 0 3.6-1.8 6.2-5 7Zm0 5c0-3 2-4.8 5-5.4-.3 3.2-2 5-5 5.4Zm0 0c0-3-2-4.8-5-5.4.3 3.2 2 5 5 5.4Z"
-                  stroke="#3A2208"
-                  strokeWidth="1.7"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Image src="/logo-kementan.png" alt="" width={42} height={42} priority />
             </span>
             <span>
               <b>CWS Way Kanan</b>
               <span>Co Working Space Penyuluhan Pertanian</span>
             </span>
           </a>
-
-          <nav className="menu" id="menu" aria-label="Menu utama">
-            <a href="#">Profil</a>
-            <a href="#">Layanan</a>
-            <a href="#">Agenda</a>
-            <a href="#">Data & Peta</a>
-            <a className="tombol-kepala" href="#">
-              Pesan ruang
-            </a>
-          </nav>
-
-          <button
-            className="tombol-menu"
-            id="tombolMenu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Buka menu"
-          >
-            <span></span>
-            <span></span>
-          </button>
         </header>
 
         <main className="isi">
           <div>
-            <span className="status">
-              <span className="titik" aria-hidden="true"></span> Buka Senin–Jumat, 08.00–16.00
-              WIB
+            <span className="status status-katimker">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.46L12 14.77l-4.94 2.23L8 11.54l-4-3.9 5.6-.78L12 2Z"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Ketua Tim Kerja: Forensy Galenica, S.P., M.P.
             </span>
 
             <h1>
@@ -139,11 +120,13 @@ export default function Home() {
             </p>
 
             <div className="aksi">
-              <a className="utama" href="#">
-                Lihat agenda minggu ini
-              </a>
-              <a className="kedua" href="#">
-                Konsultasi dengan penyuluh
+              <a
+                className="utama"
+                href="https://maps.app.goo.gl/1TovA3BUChfuPZPJ7?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lokasi CWS
               </a>
             </div>
 
@@ -154,16 +137,16 @@ export default function Home() {
               </div>
               <div>
                 <strong data-hitung="227">0</strong>
-                <span>Kampung binaan</span>
+                <span>Desa Binaan</span>
               </div>
               <div>
-                <strong data-hitung="96" data-akhir="+">
+                <strong data-hitung="94" data-akhir="+">
                   0
                 </strong>
-                <span>Penyuluh & POPT</span>
+                <span>Penyuluh</span>
               </div>
               <div>
-                <strong data-hitung="1240" data-akhir="+">
+                <strong data-hitung="2944" data-akhir="+">
                   0
                 </strong>
                 <span>Kelompok tani terdata</span>
@@ -175,15 +158,7 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="pita">
-        <div className="jalan">
-          <span>Pendaftaran kartu tani gelombang III dibuka sampai 20 September</span>
-          <span>Harga gabah kering panen minggu ini: Rp6.100/kg</span>
-          <span>Peta sebaran alsintan bantuan tahun 2026 sudah dapat diakses</span>
-          <span>Laporan e-RDKK wilayah binaan ditutup setiap tanggal 25</span>
-          <span>Layanan konsultasi daring tersedia setiap hari kerja</span>
-        </div>
-      </div>
+      <PitaTautan />
     </>
   );
 }

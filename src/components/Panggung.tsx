@@ -74,33 +74,6 @@ export default function Panggung() {
       });
     }
 
-    /* menu HP */
-    (function () {
-      const tombol = document.getElementById("tombolMenu");
-      const menu = document.getElementById("menu");
-      if (!tombol || !menu) return;
-      const setel = (buka: boolean) => {
-        document.body.classList.toggle("menu-buka", buka);
-        tombol.setAttribute("aria-expanded", String(buka));
-        tombol.setAttribute("aria-label", buka ? "Tutup menu" : "Buka menu");
-      };
-      const klikTombol = () => setel(!document.body.classList.contains("menu-buka"));
-      const klikMenu = (e: MouseEvent) => {
-        if ((e.target as HTMLElement).tagName === "A") setel(false);
-      };
-      const tekanEscape = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setel(false);
-      };
-      tombol.addEventListener("click", klikTombol);
-      menu.addEventListener("click", klikMenu);
-      addEventListener("keydown", tekanEscape);
-      pembersih.push(() => {
-        tombol.removeEventListener("click", klikTombol);
-        menu.removeEventListener("click", klikMenu);
-        removeEventListener("keydown", tekanEscape);
-      });
-    })();
-
     /* angka berjalan naik */
     document.querySelectorAll<HTMLElement>("[data-hitung]").forEach((el, i) => {
       const tujuan = +el.dataset.hitung!,
