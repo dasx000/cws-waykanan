@@ -224,32 +224,6 @@ h1{
 .aksi-item button.hapus{border-color:rgba(242,166,90,.5);color:var(--fajar-terang)}
 .aksi-item button.hapus:hover{background:rgba(242,166,90,.15)}
 
-.panel-bawah{display:flex;justify-content:space-between;align-items:center;width:100%;gap:10px}
-
-.accordion-aksi{margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:12px}
-.tombol-panah{
-  display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;
-  background:rgba(255,246,230,.08);border:1px solid var(--garis);color:var(--krem);
-  cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .2s;
-}
-.tombol-panah:hover{background:rgba(255,246,230,.14)}
-.tombol-panah.putar{transform:rotate(180deg)}
-.accordion-aksi .form-tautan,.accordion-aksi .panel-bawah{width:100%}
-
-.tombol-tautan{
-  display:inline-block;font-size:.82rem;font-weight:600;
-  color:var(--fajar-terang);background:none;border:0;cursor:pointer;font-family:inherit;
-  border-bottom:1px solid rgba(251,208,138,.4);padding:0 0 2px;
-}
-.tombol-tautan:hover{border-color:var(--fajar-terang)}
-
-.tombol-edit{
-  display:inline-block;font-size:.82rem;font-weight:600;
-  color:var(--fajar-terang);background:none;border:0;cursor:pointer;font-family:inherit;
-  border-bottom:1px solid rgba(251,208,138,.4);padding:0 0 2px;
-}
-.tombol-edit:hover,.tombol-edit.aktif{border-color:var(--fajar-terang)}
-
 .form-tautan{display:grid;gap:8px}
 .form-tautan-inline{padding:11px 13px}
 .form-tautan input{
@@ -353,3 +327,83 @@ h1{
   .panel{opacity:1}
 }
 :focus-visible{outline:2px solid var(--fajar-terang);outline-offset:3px;border-radius:6px}
+
+/* ================= LOGIN & ADMIN ================= */
+.halaman-auth{
+  position:relative;z-index:2;height:100dvh;overflow-y:auto;
+  display:grid;place-items:center;padding:24px;
+  background:linear-gradient(180deg,#122F41 0%, var(--langit-atas) 32%, var(--langit-tengah) 100%);
+}
+.kartu-auth{
+  width:100%;max-width:360px;
+  background:rgba(11,38,44,.55);border:1px solid var(--garis);
+  border-radius:22px;padding:clamp(20px,4vw,28px);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 24px 60px rgba(6,22,26,.4);
+  display:grid;gap:14px;
+}
+.kartu-auth h1{font-family:var(--font-bricolage),sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-.02em;margin:0}
+.kartu-auth > p{font-size:.82rem;opacity:.7;margin:-8px 0 4px}
+.kartu-auth label{display:grid;gap:6px;font-size:.82rem;opacity:.85}
+.kartu-auth input{
+  padding:11px 13px;border-radius:12px;border:1px solid var(--garis);
+  background:rgba(255,246,230,.08);color:var(--krem);font-size:.92rem;font-family:inherit;
+}
+.kartu-auth input::placeholder{color:rgba(255,246,230,.5)}
+.kartu-auth button{
+  margin-top:4px;padding:12px 0;border-radius:999px;border:0;font-weight:600;font-size:.92rem;
+  cursor:pointer;font-family:inherit;color:#3A2208;
+  background:linear-gradient(140deg,var(--fajar-terang),var(--fajar));
+  transition:opacity .2s;
+}
+.kartu-auth button:disabled{opacity:.6;cursor:default}
+
+.halaman-admin{
+  position:relative;z-index:2;min-height:100dvh;overflow-y:auto;
+  padding:clamp(16px,3vw,32px);display:grid;gap:18px;align-content:start;
+  background:linear-gradient(180deg,#122F41 0%, var(--langit-atas) 32%, var(--langit-tengah) 100%);
+}
+.kepala-admin{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kepala-admin b{font-family:var(--font-bricolage),sans-serif;font-weight:700;font-size:1.05rem;display:block}
+.kepala-admin span{font-size:.78rem;opacity:.7}
+.tombol-keluar{
+  padding:9px 20px;border-radius:999px;border:1px solid var(--garis);
+  background:rgba(255,246,230,.08);color:var(--krem);font-size:.82rem;font-weight:600;
+  cursor:pointer;font-family:inherit;transition:background .2s;flex:none;
+}
+.tombol-keluar:hover{background:rgba(255,246,230,.16)}
+.tombol-keluar:disabled{opacity:.6;cursor:default}
+
+.banner-peringatan{
+  font-size:.82rem;color:var(--fajar-terang);
+  background:rgba(242,166,90,.12);border:1px solid rgba(242,166,90,.4);
+  border-radius:14px;padding:12px 16px;
+}
+
+.kartu-admin{
+  background:rgba(11,38,44,.42);border:1px solid var(--garis);
+  border-radius:22px;padding:clamp(16px,2.4vh,24px);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 24px 60px rgba(6,22,26,.4);
+  display:grid;gap:14px;
+}
+.kartu-admin h2{font-family:var(--font-bricolage),sans-serif;font-size:1rem;font-weight:600;letter-spacing:-.01em}
+.form-admin{max-width:420px}
+
+.tabel-bungkus{overflow-x:auto}
+.tabel-admin{width:100%;border-collapse:collapse;font-size:.86rem;min-width:480px}
+.tabel-admin th{
+  text-align:left;font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;
+  opacity:.6;padding:0 12px 10px;border-bottom:1px solid var(--garis);
+}
+.tabel-admin td{padding:12px;border-bottom:1px solid var(--garis);vertical-align:middle}
+.tabel-admin tr:last-child td{border-bottom:0}
+.tabel-admin td a{color:var(--fajar-terang);text-decoration:none;word-break:break-all}
+.tabel-admin td a:hover{text-decoration:underline}
+.kolom-aksi{white-space:nowrap}
+.kolom-aksi .aksi-item{align-items:center}
+.kolom-aksi .aksi-item span{font-size:.78rem;opacity:.75}
+
+@media (max-width:420px){
+  .kartu-auth{padding:20px}
+}

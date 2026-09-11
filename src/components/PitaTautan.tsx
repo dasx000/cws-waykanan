@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
 
 type Tautan = {
   id: string;
@@ -15,6 +15,8 @@ export default function PitaTautan() {
   const [totalPengunjung, setTotalPengunjung] = useState<number | null>(null);
 
   useEffect(() => {
+    const supabase = createClient();
+
     supabase
       .from("links")
       .select("id,title,url")
